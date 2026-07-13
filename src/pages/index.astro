@@ -10,39 +10,58 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 
 const fmt = (d: Date) => d.toISOString().slice(0, 10);
 ---
+
 <Base active="home">
   <div class="intro">
-    <h1>Machine learning engineer working on <span class="hi-underline">systems that find things</span>.</h1>
+    <h1>
+      Machine learning engineer working on <span class="hi-underline">systems that find things</span
+      >.
+    </h1>
     <p>
       I build recommendation systems, personalization pipelines, and search — both the classic
       information-retrieval kind and the newer image-classification-and-search kind. This site is
       where I write about that work and keep a record of projects I'm proud of.
     </p>
     <p class="topics">
-      Currently thinking about: <b>candidate retrieval at scale</b>, <b>embedding-based image
-      search</b>, and <b>how personalization goes wrong</b>.
+      Currently thinking about: <b>candidate retrieval at scale</b>, <b
+        >embedding-based image search</b
+      >, and <b>how personalization goes wrong</b>.
     </p>
   </div>
 
   <div class="section-label">Selected work</div>
-  {projects.map((p) => (
-    <article class="project">
-      <h3><a href={p.url} target="_blank" rel="noopener">{p.title}</a></h3>
-      <p>{p.description}</p>
-      <div class="chips">
-        {p.tags.map((t) => <span class={`chip ${t.color}`}>{t.label}</span>)}
-      </div>
-    </article>
-  ))}
+  {
+    projects.map((p) => (
+      <article class="project">
+        <h3>
+          <a href={p.url} target="_blank" rel="noopener">
+            {p.title}
+          </a>
+        </h3>
+        <p>{p.description}</p>
+        <div class="chips">
+          {p.tags.map((t) => (
+            <span class={`chip ${t.color}`}>{t.label}</span>
+          ))}
+        </div>
+      </article>
+    ))
+  }
 
   <div class="section-label">Recent writing</div>
-  {posts.map((post) => (
-    <article class="post">
-      <time datetime={fmt(post.data.pubDate)}>{fmt(post.data.pubDate)}</time>
-      <div class="body">
-        <h3><a class="postlink" href={`${base}/blog/${post.id}/`}>{post.data.title}</a></h3>
-        <p>{post.data.description}</p>
-      </div>
-    </article>
-  ))}
+  {
+    posts.map((post) => (
+      <article class="post">
+        <time datetime={fmt(post.data.pubDate)}>{fmt(post.data.pubDate)}</time>
+        <div class="body">
+          <h3>
+            <a class="postlink" href={`${base}/blog/${post.id}/`}>
+              {post.data.title}
+            </a>
+          </h3>
+          <p>{post.data.description}</p>
+        </div>
+      </article>
+    ))
+  }
 </Base>
