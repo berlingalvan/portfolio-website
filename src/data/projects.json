@@ -1,0 +1,31 @@
+[
+  {
+    "title": "REPLACE ME — Two-tower retrieval for a product catalog",
+    "description": "Placeholder from the mockup. Swap in a real project: what it was, what you built, what moved the metrics.",
+    "url": "https://github.com/berlingalvan",
+    "tags": [
+      { "label": "recsys", "color": "pink" },
+      { "label": "ann-search", "color": "cyan" },
+      { "label": "tensorflow", "color": "purple" }
+    ]
+  },
+  {
+    "title": "REPLACE ME — Visual search: query by image",
+    "description": "Placeholder from the mockup. Swap in a real project with a link to its repo or writeup.",
+    "url": "https://github.com/berlingalvan",
+    "tags": [
+      { "label": "computer-vision", "color": "yellow" },
+      { "label": "image-search", "color": "cyan" },
+      { "label": "pytorch", "color": "purple" }
+    ]
+  },
+  {
+    "title": "REPLACE ME — Personalized ranking, explained to stakeholders",
+    "description": "Placeholder from the mockup. Projects live in src/data/projects.json — edit that file to change this list.",
+    "url": "https://github.com/berlingalvan",
+    "tags": [
+      { "label": "personalization", "color": "pink" },
+      { "label": "ranking", "color": "yellow" }
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+---
+<Base active="about" title={`About — ${site.name}`}>
+  <h1 class="page-title">About</h1>
+  <div class="about-grid">
+    {/* Replace with a real photo: put photo.jpg in public/ and use
+        <img src={`${import.meta.env.BASE_URL}/photo.jpg`} alt="Galvan Berlin" /> inside .portrait */}
+    <div class="portrait" aria-hidden="true">{site.initials}</div>
+    <div class="about-copy">
+      <h2>Hi, I'm Galvan.</h2>
+      <p>
+        I'm a machine learning engineer focused on the retrieval side of ML: recommendation
+        systems, personalization, information retrieval, and image classification &amp; search.
+        I like problems where the model is only half the job and the other half is data,
+        indexing, and honest evaluation.
+      </p>
+      <p>
+        Outside of work you'll find me [hobby], [hobby], and collecting an unreasonable
+        number of [thing]. This site is intentionally simple — the color comes from a
+        childhood spent surrounded by Lisa Frank folders. ✦
+      </p>
+      <p class="quiet">The best way to reach me is LinkedIn, or open an issue on just about any of my repos.</p>
+      <div class="connect">
+        <a href={site.linkedin} target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          LinkedIn
+        </a>
+        <a href={site.github} target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.96c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12v3.15c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</Base>
