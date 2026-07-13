@@ -1,6 +1,6 @@
 ---
-title: "Hello, world (and how this blog works)"
-description: "A first post, and a note-to-self on how to publish here."
+title: 'Hello, world (and how this blog works)'
+description: 'A first post, and a note-to-self on how to publish here.'
 pubDate: 2026-07-12
 ---
 
@@ -17,8 +17,8 @@ Writing here is intentionally low-friction:
 
 ```yaml
 ---
-title: "My next post"
-description: "One-line teaser shown in the post list."
+title: 'My next post'
+description: 'One-line teaser shown in the post list.'
 pubDate: 2026-08-01
 ---
 ```

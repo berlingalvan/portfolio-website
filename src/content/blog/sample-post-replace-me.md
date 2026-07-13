@@ -1,6 +1,6 @@
 ---
-title: "Sample post — replace or delete me"
-description: "A placeholder post showing what Markdown renders like on this site."
+title: 'Sample post — replace or delete me'
+description: 'A placeholder post showing what Markdown renders like on this site.'
 pubDate: 2026-07-01
 draft: false
 ---
