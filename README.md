@@ -43,21 +43,31 @@ npm run build      # production build into dist/
 npm run preview    # preview the production build
 ```
 
-## Workflow: staging → main
+## Workflow: feature branch → staging → main
 
-`main` is protected — changes land through pull requests. Day-to-day flow:
+Both `staging` and `main` are protected — nothing lands on them without a pull request and a
+green CI run. Feature branches are auto-deleted after merge.
+
+**Day-to-day changes** go on a feature branch and PR into `staging`:
 
 ```bash
-git checkout staging
-git pull origin main          # keep staging up to date
+git checkout staging && git pull
+git checkout -b feature/my-change
 # ...make changes, commit...
-git push origin staging
-gh pr create --base main --head staging --fill
-# CI runs lint + format + type check + build on the PR
-gh pr merge --squash          # or merge from the GitHub UI
+git push -u origin feature/my-change
+gh pr create --base staging --fill
+gh pr merge --squash              # once CI is green (or use the GitHub UI)
 ```
 
-Merging to `main` triggers the deploy workflow, which publishes the site.
+**Releasing** is a PR from `staging` into `main`; merging it triggers the deploy workflow,
+which publishes the site:
+
+```bash
+gh pr create --base main --head staging --title "Release: <what's in it>"
+gh pr merge --merge                # merge commit, not squash — keeps the branches in sync
+```
+
+After a release, sync staging with main: `git checkout staging && git pull origin main && git push`.
 
 ## Lint & checks
 
@@ -71,7 +81,15 @@ npm run format        # Prettier (write)
 npm run check         # astro check — type-checks .astro files
 ```
 
+## Analytics (off by default)
+
+Privacy-friendly analytics via [GoatCounter](https://www.goatcounter.com) — free, no cookies.
+To enable: create a GoatCounter account, pick a site code, and put that code in the
+`goatcounter` field of `src/data/site.json` (e.g. `"goatcounter": "galvanberlin"`).
+Leave it `""` to keep analytics off.
+
 ## Custom domain (later)
 
 If you buy a domain, point it at GitHub Pages, add it in the repo's Pages settings, then in
-`astro.config.mjs` set `site` to the new domain and remove `base`.
+`astro.config.mjs` set `site` to the new domain and remove `base`, and update the
+`Sitemap:` URL in `public/robots.txt`.

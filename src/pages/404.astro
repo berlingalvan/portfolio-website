@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Base title={`Not found — ${site.name}`}>
+  <div class="intro">
+    <h1><span class="hi-underline">404</span> — nothing retrieved.</h1>
+    <p>
+      This page doesn't exist. As someone who works on search, I take that personally — the query
+      was fine, the index just doesn't have it.
+    </p>
+    <p class="topics">
+      Try the <a href={`${base}/`}>home page</a> or the <a href={`${base}/blog/`}>blog</a>.
+    </p>
+  </div>
+</Base>
