@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://berlingalvan.github.io/portfolio-website/sitemap-index.xml

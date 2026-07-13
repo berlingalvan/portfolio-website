@@ -71,7 +71,15 @@ npm run format        # Prettier (write)
 npm run check         # astro check — type-checks .astro files
 ```
 
+## Analytics (off by default)
+
+Privacy-friendly analytics via [GoatCounter](https://www.goatcounter.com) — free, no cookies.
+To enable: create a GoatCounter account, pick a site code, and put that code in the
+`goatcounter` field of `src/data/site.json` (e.g. `"goatcounter": "galvanberlin"`).
+Leave it `""` to keep analytics off.
+
 ## Custom domain (later)
 
 If you buy a domain, point it at GitHub Pages, add it in the repo's Pages settings, then in
-`astro.config.mjs` set `site` to the new domain and remove `base`.
+`astro.config.mjs` set `site` to the new domain and remove `base`, and update the
+`Sitemap:` URL in `public/robots.txt`.

@@ -24,6 +24,13 @@ const year = new Date().getFullYear();
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    {
+      site.goatcounter && (
+        <Fragment
+          set:html={`<script data-goatcounter="https://${site.goatcounter}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>`}
+        />
+      )
+    }
   </head>
   <body>
     <div class="wrap">
