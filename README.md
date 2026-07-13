@@ -67,7 +67,12 @@ gh pr create --base main --head staging --title "Release: <what's in it>"
 gh pr merge --merge                # merge commit, not squash — keeps the branches in sync
 ```
 
-After a release, sync staging with main: `git checkout staging && git pull origin main && git push`.
+No post-release sync is needed: because releases merge with a merge commit, `staging` and
+`main` stay content-identical — `main` is just ahead by the merge commits, which is expected
+(and the branch protection would reject a direct sync push anyway).
+
+Dependabot targets `staging`, so dependency updates flow through the same
+feature → staging → main path as everything else.
 
 ## Lint & checks
 

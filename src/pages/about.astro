@@ -6,27 +6,27 @@ import site from '../data/site.json';
 <Base active="about" title={`About — ${site.name}`}>
   <h1 class="page-title">About</h1>
   <div class="about-grid">
-    {
-      /* Replace with a real photo: put photo.jpg in public/ and use
-        <img src={`${import.meta.env.BASE_URL}/photo.jpg`} alt="Galvan Berlin" /> inside .portrait */
-    }
-    <div class="portrait" aria-hidden="true">{site.initials}</div>
+    <div class="portrait">
+      <img src={`${import.meta.env.BASE_URL}/profile-photo.jpg`} alt="Berlin Galvan" />
+    </div>
     <div class="about-copy">
-      <h2>Hi, I'm Galvan.</h2>
+      <h2>Hi, I'm Berlin!</h2>
       <p>
         I'm a machine learning engineer focused on the retrieval side of ML: recommendation systems,
         personalization, information retrieval, and image classification &amp; search. I like
-        problems where the model is only half the job and the other half is data, indexing, and
-        honest evaluation.
+        helping people discover new things they would enjoy. I like problems where the model is half
+        the job and the other half is a combination of engineering and evaluation.
       </p>
       <p>
-        Outside of work you'll find me [hobby], [hobby], and collecting an unreasonable number of
-        [thing]. This site is intentionally simple — the color comes from a childhood spent
-        surrounded by Lisa Frank folders. ✦
+        I currently work at PayPal where I spend my time adding new search features and expanding
+        the product catalog.
       </p>
-      <p class="quiet">
-        The best way to reach me is LinkedIn, or open an issue on just about any of my repos.
+      <p>
+        Outside of work you'll find me reading, making Partiful invites for all aspects of my social
+        life, running half-marathons, and collecting an unreasonable number of cookbooks (yes,
+        chef!). This site is inspired by a childhood surrounded by Lisa Frank folders. ✦
       </p>
+      <p class="quiet">The best way to reach me is LinkedIn.</p>
       <div class="connect">
         <a href={site.linkedin} target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"
